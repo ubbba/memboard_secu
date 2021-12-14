@@ -4,11 +4,11 @@
 
 <mapper namespace="com.icia.memboard.dao.MDAO">
     <insert id="mJoin" parameterType="member">
-        INSERT INTO BTMEMBER VALUES (#{mId}, #{mPw}, #{mName}, #{mAge}, #{mProfileName})
+        INSERT INTO BTMEMBER VALUES (#{mId}, #{mPw}, #{mName}, #{mAge}, #{mEmail}, #{mProfileName})
     </insert>
 
     <select id="mLogin" parameterType="member" resultType="member">
-        SELECT * FROM BTMEMBER WHERE MID=#{mId} AND MPW=#{mPw}
+        SELECT * FROM BTMEMBER WHERE MID=#{mId}
     </select>
 
     <select id="mList" resultType="member">

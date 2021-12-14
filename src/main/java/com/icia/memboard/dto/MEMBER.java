@@ -12,6 +12,7 @@ public class MEMBER {
     String mPw;
     String mName;
     String mAge;
+    String mEmail;
     MultipartFile mProfile;
     String mProfileName;
 }
