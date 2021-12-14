@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE-edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="inception"/>
+    <meta name="description" content="페이지 설명"/>
+    <link rel="stylesheet" href="/css/table.css" type="text/css"/>
+    <title>Board_Modify</title>
+</head>
+<body>
+    <form action="bModify" method="POST" enctype="multipart/form-data">
+        <table>
+            <caption>게시글 수정</caption>
+            <input type="hidden" name="bNo" th:value="${board.bNo}">
+            <tr>
+                <th>작성자</th>
+                <td><input type="text" name="bWriter" th:placeholder="${board.bWriter}"></td>
+            </tr>
+
+            <tr>
+                <th>제목</th>
+                <td><input type="text" name="bTitle" th:placeholder="${board.bTitle}"></td>
+            </tr>
+
+            <tr>
+                <th>내용</th>
+                <td><textarea rows="20" cols="20" name="bContent" th:placeholder="${board.bContent}"></textarea></td>
+            </tr>
+
+            <tr>
+                <th>첨부파일</th>
+                <td>
+                    <img th:src="@{/upload/{bFileName}(bFileName=${board.bFileName})}" width="200px">
+                    <br/>
+                    <input type="file" name="bFile">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><input type="submit" value="수정"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

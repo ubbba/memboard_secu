@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE-edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="inception"/>
+    <meta name="description" content="페이지 설명"/>
+    <title>modify</title>
+</head>
+<body>
+<form action="mModify" method="post" >
+    <table>
+        <caption>회원수정</caption>
+        <tr>
+            <th>아이디</th>
+            <td><input type="hidden" name="mId" th:text="${member.mId}" th:value="${member.mId}"/></td>
+        </tr>
+        <tr>
+            <th>비밀번호</th>
+            <td><input type="password" name="mPw"></td>
+        </tr>
+        <tr>
+            <th>이름</th>
+            <td><input type="text" name="mName" th:placeholder="${member.mName}"></td>
+        </tr>
+        <tr>
+            <th>나이</th>
+            <td><input type="text" name="mAge" th:placeholder="${member.mAge}"></td>
+        </tr>
+        <tr>
+            <th>사진</th>
+            <td><input type="file" name="mProfile"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="수정"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
